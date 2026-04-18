@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Resolution to Revolution</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* FIX WHITE LINE ISSUE */
+    background: black;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* SLIDES */
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    padding: 60px;
+    color: white;
+
+    opacity: 0;
+    transform: scale(1.05);
+    transition: all 0.9s ease;
+}
+
+.slide.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* BACKGROUNDS */
+.bg1 { background: linear-gradient(-45deg,#00c6ff,#0072ff,#00ffcc,#1f4037); background-size:400% 400%; animation: move 12s ease infinite; }
+.bg2 { background: linear-gradient(-45deg,#ff9a9e,#fad0c4,#fbc2eb,#ffdde1); background-size:400% 400%; animation: move 12s ease infinite; }
+.bg3 { background: linear-gradient(-45deg,#a18cd1,#fbc2eb,#fda085,#f6d365); background-size:400% 400%; animation: move 12s ease infinite; }
+.bg4 { background: linear-gradient(-45deg,#43cea2,#185a9d,#30cfd0,#330867); background-size:400% 400%; animation: move 12s ease infinite; }
+.bg5 { background: linear-gradient(-45deg,#ff512f,#dd2476,#24c6dc,#514a9d); background-size:400% 400%; animation: move 12s ease infinite; }
+
+@keyframes move {
+    0% {background-position:0% 50%;}
+    50% {background-position:100% 50%;}
+    100% {background-position:0% 50%;}
+}
+
+/* TEXT */
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+p {
+    max-width: 900px;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* GLASS BOX */
+.box {
+    margin-top: 20px;
+    padding: 30px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* BIG ARROWS */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 60px;
+    background: rgba(255,255,255,0.15);
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: 0.3s;
+    user-select: none;
+}
+
+.arrow:hover {
+    background: rgba(255,255,255,0.35);
+}
+
+.left { left: 20px; }
+.right { right: 20px; }
+
+</style>
+</head>
+
+<body>
+
+<!-- SLIDES -->
+
+<div class="slide active bg1">
+    <h1>Resolution to Revolution</h1>
+    <p>How 1940–1947 Created Hope and Fear in South Asia</p>
+
+    <div class="box">
+        Written By: MuhammadFahad <br>
+        Teacher: Ayesha Ammar <br>
+        Date: 4/18/2026
+    </div>
+</div>
+
+<div class="slide bg2">
+<h2>Driving Question</h2>
+<div class="box">
+<p>
+The events between 1940 and 1947 shaped South Asia’s future in a very powerful way. People felt hope because independence from British rule seemed close. At the same time, fear increased because different groups had different ideas about how the country should be governed. As political talks failed and tensions increased, uncertainty spread among people about safety, unity, and the future of their homeland.
+</p>
+</div>
+</div>
+
+<div class="slide bg3">
+<h2>Lahore Resolution (1940)</h2>
+<div class="box">
+<p>
+This resolution gave Muslims hope for a separate homeland where they could live freely and protect their identity, religion, and rights. However, it also created fear among other communities who worried that India would be divided. It was the beginning of stronger political separation.
+</p>
+</div>
+</div>
+
+<div class="slide bg4">
+<h2>Cripps Mission (1942)</h2>
+<div class="box">
+<p>
+The British offered future independence, which created hope among Indians. However, since it did not give immediate freedom, it was rejected. This increased frustration and fear that independence might never come peacefully.
+</p>
+</div>
+</div>
+
+<div class="slide bg5">
+<h2>Simla Conference (1945)</h2>
+<div class="box">
+<p>
+This conference failed because leaders could not agree on how power should be shared. This failure increased fear and showed that political unity was breaking down.
+</p>
+</div>
+</div>
+
+<div class="slide bg2">
+<h2>Partition (1947)</h2>
+<div class="box">
+<p>
+India was divided into two countries. This created hope for independence but also caused massive migration and violence. Millions suffered, making this moment both joyful and tragic.
+</p>
+</div>
+</div>
+
+<!-- ARROWS -->
+<button class="arrow left" onclick="prevSlide()">❮</button>
+<button class="arrow right" onclick="nextSlide()">❯</button>
+
+<script>
+let slides = document.querySelectorAll(".slide");
+let index = 0;
+
+function show() {
+    slides.forEach(s => s.classList.remove("active"));
+    slides[index].classList.add("active");
+}
+
+function nextSlide() {
+    if(index < slides.length - 1) index++;
+    show();
+}
+
+function prevSlide() {
+    if(index > 0) index--;
+    show();
+}
+
+document.addEventListener("keydown", (e) => {
+    if(e.key === "ArrowRight") nextSlide();
+    if(e.key === "ArrowLeft") prevSlide();
+});
+</script>
+
+</body>
+</html>
