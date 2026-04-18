@@ -14,20 +14,21 @@
 }
 
 html, body {
-    width: 100%;
-    height: 100%;
-    overflow: hidden; /* FIX WHITE LINE ISSUE */
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
     background: black;
-    font-family: 'Poppins', sans-serif;
 }
 
 /* SLIDES */
 .slide {
     position: absolute;
-    width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    padding: 60px;
 
     display: flex;
     flex-direction: column;
@@ -35,12 +36,11 @@ html, body {
     align-items: center;
     text-align: center;
 
-    padding: 60px;
     color: white;
 
     opacity: 0;
-    transform: scale(1.05);
-    transition: all 0.9s ease;
+    transform: scale(1.1);
+    transition: all 1s ease;
 }
 
 .slide.active {
@@ -49,6 +49,7 @@ html, body {
 }
 
 /* BACKGROUNDS */
+.bg0 { background: linear-gradient(-45deg,#1f1c2c,#928dab,#232526,#414345); background-size:400% 400%; animation: move 12s ease infinite; }
 .bg1 { background: linear-gradient(-45deg,#00c6ff,#0072ff,#00ffcc,#1f4037); background-size:400% 400%; animation: move 12s ease infinite; }
 .bg2 { background: linear-gradient(-45deg,#ff9a9e,#fad0c4,#fbc2eb,#ffdde1); background-size:400% 400%; animation: move 12s ease infinite; }
 .bg3 { background: linear-gradient(-45deg,#a18cd1,#fbc2eb,#fda085,#f6d365); background-size:400% 400%; animation: move 12s ease infinite; }
@@ -56,9 +57,9 @@ html, body {
 .bg5 { background: linear-gradient(-45deg,#ff512f,#dd2476,#24c6dc,#514a9d); background-size:400% 400%; animation: move 12s ease infinite; }
 
 @keyframes move {
-    0% {background-position:0% 50%;}
-    50% {background-position:100% 50%;}
-    100% {background-position:0% 50%;}
+    0% { background-position:0% 50%; }
+    50% { background-position:100% 50%; }
+    100% { background-position:0% 50%; }
 }
 
 /* TEXT */
@@ -72,19 +73,19 @@ h1 {
 }
 
 h2 {
-    font-size: 2.2rem;
+    font-size: 2.3rem;
     margin-bottom: 20px;
 }
 
 p {
-    max-width: 900px;
+    font-family: 'Poppins', sans-serif;
+    max-width: 1000px;
     font-size: 18px;
-    line-height: 1.8;
+    line-height: 1.9;
 }
 
-/* GLASS BOX */
 .box {
-    margin-top: 20px;
+    margin-top: 25px;
     padding: 30px;
     background: rgba(255,255,255,0.12);
     border-radius: 20px;
@@ -92,118 +93,185 @@ p {
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-/* BIG ARROWS */
+/* ARROWS */
 .arrow {
-    position: absolute;
+    position: fixed;
     top: 50%;
     transform: translateY(-50%);
     font-size: 60px;
-    background: rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.25);
     color: white;
     border: none;
     padding: 15px 25px;
     cursor: pointer;
     border-radius: 15px;
     transition: 0.3s;
-    user-select: none;
-}
-
-.arrow:hover {
-    background: rgba(255,255,255,0.35);
+    z-index: 9999;
 }
 
 .left { left: 20px; }
 .right { right: 20px; }
+
+.arrow:hover {
+    background: rgba(255,255,255,0.4);
+}
 
 </style>
 </head>
 
 <body>
 
-<!-- SLIDES -->
-
-<div class="slide active bg1">
-    <h1>Resolution to Revolution</h1>
-    <p>How 1940–1947 Created Hope and Fear in South Asia</p>
-
-    <div class="box">
-        Written By: MuhammadFahad <br>
-        Teacher: Ayesha Ammar <br>
-        Date: 4/18/2026
-    </div>
+<!-- SLIDE 0 (NEW INTRO PAGE) -->
+<div class="slide active bg0">
+<div class="box">
+<h2>Project Information</h2>
+<p>
+Written By: Muhammad Fahad<br>
+Teacher: Ayesha Ammar<br>
+Date: 4/18/2026<br>
+</p>
+</div>
 </div>
 
+<!-- SLIDE 1 -->
+<div class="slide bg1">
+<h1>Resolution to Revolution</h1>
+<p>How 1940–1947 Created Hope and Fear in South Asia</p>
+
+<div class="box">
+<p>
+This presentation explores major historical events between 1940 and 1947.<br>
+It explains how political decisions shaped the future of South Asia.<br>
+It shows both hope for independence and fear of division.<br>
+It focuses on key events like Lahore Resolution, Cripps Mission, and Partition.<br>
+It explains how leaders and communities reacted to changing conditions.<br>
+It highlights how history led to the creation of India and Pakistan.<br>
+</p>
+</div>
+</div>
+
+<!-- SLIDE 2 -->
 <div class="slide bg2">
 <h2>Driving Question</h2>
 <div class="box">
 <p>
-The events between 1940 and 1947 shaped South Asia’s future in a very powerful way. People felt hope because independence from British rule seemed close. At the same time, fear increased because different groups had different ideas about how the country should be governed. As political talks failed and tensions increased, uncertainty spread among people about safety, unity, and the future of their homeland.
+The years between 1940 and 1947 were a turning point in South Asian history.<br>
+British colonial rule was weakening after decades of control.<br>
+Political groups began demanding independence and self-rule.<br>
+Many people felt hope that freedom was finally near.<br>
+However, different communities had different political goals.<br>
+Tensions increased between religious and political groups.<br>
+This created both hope for freedom and fear of division.<br>
 </p>
 </div>
 </div>
 
+<!-- SLIDE 3 -->
 <div class="slide bg3">
 <h2>Lahore Resolution (1940)</h2>
 <div class="box">
 <p>
-This resolution gave Muslims hope for a separate homeland where they could live freely and protect their identity, religion, and rights. However, it also created fear among other communities who worried that India would be divided. It was the beginning of stronger political separation.
+The Lahore Resolution was passed by the Muslim League in 1940.<br>
+It demanded separate states for Muslims in British India.<br>
+It became the foundation for the idea of Pakistan.<br>
+Muslims felt it would protect their rights and identity.<br>
+It gave hope for political security and independence.<br>
+However, many groups opposed this idea strongly.<br>
+It increased fear of division and political conflict.<br>
 </p>
 </div>
 </div>
 
+<!-- SLIDE 4 -->
 <div class="slide bg4">
 <h2>Cripps Mission (1942)</h2>
 <div class="box">
 <p>
-The British offered future independence, which created hope among Indians. However, since it did not give immediate freedom, it was rejected. This increased frustration and fear that independence might never come peacefully.
+The Cripps Mission was sent by Britain during World War II.<br>
+It promised India future independence after the war.<br>
+This created hope among Indian political leaders.<br>
+However, it did not offer immediate independence.<br>
+It also allowed provinces to choose separation.<br>
+Major parties like Congress and Muslim League rejected it.<br>
+Its failure increased frustration and political tension.<br>
 </p>
 </div>
 </div>
 
+<!-- SLIDE 5 -->
 <div class="slide bg5">
 <h2>Simla Conference (1945)</h2>
 <div class="box">
 <p>
-This conference failed because leaders could not agree on how power should be shared. This failure increased fear and showed that political unity was breaking down.
+The Simla Conference was held to form a future government plan.<br>
+British officials invited Indian leaders to negotiate power sharing.<br>
+It aimed to reduce conflict between major political groups.<br>
+However, leaders could not agree on representation.<br>
+The Muslim League and Congress had major disagreements.<br>
+The talks failed without any final agreement.<br>
+This increased fear of political instability.<br>
 </p>
 </div>
 </div>
 
-<div class="slide bg2">
+<!-- SLIDE 6 -->
+<div class="slide bg3">
 <h2>Partition (1947)</h2>
 <div class="box">
 <p>
-India was divided into two countries. This created hope for independence but also caused massive migration and violence. Millions suffered, making this moment both joyful and tragic.
+In 1947, British India was divided into India and Pakistan.<br>
+This marked the end of British colonial rule.<br>
+It created hope for independence and self-governance.<br>
+However, it also caused massive migration of people.<br>
+Millions were forced to leave their homes suddenly.<br>
+Widespread violence and riots broke out across regions.<br>
+It became one of the most tragic events in history.<br>
+</p>
+</div>
+</div>
+
+<!-- SLIDE 7 -->
+<div class="slide bg1">
+<h2>Conclusion</h2>
+<div class="box">
+<p>
+The period from 1940 to 1947 changed South Asia forever.<br>
+It ended British rule and created two independent nations.<br>
+It fulfilled the dream of freedom after a long struggle.<br>
+However, it also caused division, violence, and suffering.<br>
+Millions of people were displaced during Partition.<br>
+This era shows both success and tragedy in history.<br>
+It remains one of the most important events in the region.<br>
 </p>
 </div>
 </div>
 
 <!-- ARROWS -->
-<button class="arrow left" onclick="prevSlide()">❮</button>
-<button class="arrow right" onclick="nextSlide()">❯</button>
+<button class="arrow left" onclick="prev()">❮</button>
+<button class="arrow right" onclick="next()">❯</button>
 
 <script>
 let slides = document.querySelectorAll(".slide");
-let index = 0;
+let i = 0;
 
-function show() {
+function show(){
     slides.forEach(s => s.classList.remove("active"));
-    slides[index].classList.add("active");
+    slides[i].classList.add("active");
 }
 
-function nextSlide() {
-    if(index < slides.length - 1) index++;
+function next(){
+    if(i < slides.length - 1) i++;
     show();
 }
 
-function prevSlide() {
-    if(index > 0) index--;
+function prev(){
+    if(i > 0) i--;
     show();
 }
 
-document.addEventListener("keydown", (e) => {
-    if(e.key === "ArrowRight") nextSlide();
-    if(e.key === "ArrowLeft") prevSlide();
+document.addEventListener("keydown", e => {
+    if(e.key === "ArrowRight") next();
+    if(e.key === "ArrowLeft") prev();
 });
 </script>
 
